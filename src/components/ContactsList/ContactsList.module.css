@@ -1,0 +1,108 @@
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 24px;
+  margin: 16px 16px 16px 16px;
+  padding: 16px;
+}
+
+.button {
+  background: hsl(245deg, 100%, 60%);
+  color: white;
+  border: none;
+  padding: 16px 20px;
+  margin: 10px 16px;
+  border-radius: 16px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  transition: 200ms ease-out;
+}
+
+.button:hover {
+  background-color: hsl(245, 100%, 59%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 100ms ease-in;
+}
+
+.button:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 10ms ease-out;
+}
+
+.span {
+  font-size: 1rem;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.contactsInfo {
+  font-size: 2rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: flex-start;
+  gap: 28px;
+  margin-bottom: 20px;
+}
+
+.contactsInfo span {
+  font-size: 1rem;
+  padding-left: 8px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 50px;
+  padding-left: 10px;
+}
+
+.headerRow {
+  border-bottom: 1px solid #c4c7c5;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.headerRow div {
+  width: 25%;
+}
+
+.contactRow {
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.contactRow div {
+  width: 25%;
+}
+
+.contactElement {
+  flex: 10;
+}
+
+.emptyDiv {
+  flex: 1;
+}
+
+.editPng {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+}
+
+.editPng > span {
+  cursor: pointer;
+}

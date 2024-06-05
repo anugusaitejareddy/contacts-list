@@ -1,0 +1,153 @@
+.formContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-color: #ccc;
+}
+
+.form {
+  /* transform: translateY(3%); */
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 50%;
+  margin: auto;
+  background-color: #fff;
+  padding: 28px 20px;
+
+  border-radius: 8px;
+}
+
+.inputWrapper {
+  margin-bottom: 24px;
+
+  width: 75%;
+}
+
+.input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 8px 0 12px;
+}
+
+.borderBottom {
+  height: 3px;
+  background: hsl(222deg, 22%, 5%);
+  opacity: 0.6;
+  transition: transform 100ms ease-in;
+}
+
+input:focus + .borderBottom {
+  transform: translateY(6px);
+  opacity: 1;
+  height: 3px;
+  background-color: hsl(245deg, 100%, 60%);
+  transition: transform 200ms ease-out;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.radioGroupLabel {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.radioLabel {
+  margin-right: 50px;
+  padding-left: 4px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.btnWrapper {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+.button {
+  padding: 6px 28px;
+  border: none;
+
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: transform 100ms ease-in;
+  outline-offset: 2px;
+}
+
+.saveButton {
+  background-color: hsl(230deg, 100%, 45%);
+  color: white;
+}
+
+.cancelButton {
+  background-color: hsl(0, 0%, 75%);
+  color: hsl(0, 0%, 20%);
+}
+
+.button:active {
+  transform: scale(0.95);
+  transition: transform 50ms ease-out;
+}
+
+/* 
+
+.span {
+  position: absolute;
+  left: 10px;
+  top: 5px;
+
+  background-color: #fff;
+  padding: 0 4px;
+  transition: transform 200ms ease-in;
+  color: #444746;
+}
+
+.input {
+  padding: 5px 10px;
+  border: none;
+  border: 1px solid #444746;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.input:focus {
+  outline: #0b57d0 solid 3px;
+  border: none;
+}
+
+.input:focus + .span {
+  transform: scale(0.8);
+  top: -15px;
+  left: 2px;
+  transition: all 100ms ease-out;
+  color: #0b57d0;
+} */
