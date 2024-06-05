@@ -51,18 +51,14 @@ const createContactInitialData = {
   gender: "Male",
 };
 
-let previousId = initialContacts.length;
-
 function reducer(contactsList, action) {
   if (action.type === "create") {
     const newContact = {
+      id: contactsList.length + 1,
       ...action.newContact,
-      id: previousId++,
     };
-    console.log(newContact);
     return [...contactsList, newContact];
-  }
-  if (action.type === "update") {
+  } else if (action.type === "update") {
     return contactsList.map((contact) => {
       if (contact.id === action.updateInfo.id) {
         return action.updateInfo;
@@ -79,6 +75,8 @@ function ContactsList() {
   const [createContact, setCreateContact] = React.useState(false);
   const [updateContact, setUpdateContact] = React.useState(false);
   const [selectedContact, setSelectedContact] = React.useState(0);
+
+  console.log(selectedContact);
 
   function handleCreateContact() {
     setCreateContact(false);
@@ -181,7 +179,7 @@ function ContactsList() {
           <div className={styles.contactElement}>Gender</div>
           <div className={styles.emptyDiv}>Actions</div>
         </div>
-        {contactsList.map((contact) => (
+        {contactsList.map((contact, index) => (
           <div
             key={contact.id}
             className={`${styles.contactRow} ${styles.row}`}
@@ -197,7 +195,7 @@ function ContactsList() {
               <span
                 onClick={() => {
                   setUpdateContact(true);
-                  setSelectedContact(contact.id);
+                  setSelectedContact(index);
                 }}
                 className="material-symbols-outlined"
               >
@@ -218,15 +216,15 @@ function ContactsList() {
           type="create"
           contact={createContactInitialData}
           handleContact={handleCreateContact}
-          handleAddNewContact={handleAddNewContact}
+          handleNewContact={handleAddNewContact}
         />
       )}
       {updateContact && (
         <CreateContact
           type="update"
-          contact={contactsList[selectedContact - 1]}
+          contact={contactsList[selectedContact]}
           handleContact={handleUpdateContact}
-          handleAddNewContact={handleUpdateExistingContact}
+          handleNewContact={handleUpdateExistingContact}
         />
       )}
     </div>

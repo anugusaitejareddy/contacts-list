@@ -17,6 +17,7 @@
   margin: 10px 16px;
   border-radius: 16px;
   cursor: pointer;
+  outline-offset: 4px;
 
   display: flex;
   justify-content: center;

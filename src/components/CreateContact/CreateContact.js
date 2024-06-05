@@ -1,14 +1,12 @@
 import styles from "./CreateContact.module.css";
 import React from "react";
 
-function CreateContact({ type, contact, handleContact, handleAddNewContact }) {
+function CreateContact({ type, contact, handleContact, handleNewContact }) {
   const [formData, setFormData] = React.useState(contact);
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    if (type === "update") {
-    }
-    handleAddNewContact(formData);
+    handleNewContact(formData);
     handleContact();
   }
 
