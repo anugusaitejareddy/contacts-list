@@ -1,4 +1,3 @@
-import { useReducer } from "react";
 import styles from "./ContactsList.module.css";
 import CreateContact from "../CreateContact/CreateContact";
 import React from "react";
@@ -24,20 +23,20 @@ const initialContacts = [
   },
   {
     id: 3,
-    firstName: "Adam",
-    lastName: "Gilchrist",
+    firstName: "James",
+    lastName: "Chris",
     contactType: "Personal",
     phoneNumber: "979654889",
-    email: "adamgilli@gmail.com",
+    email: "chris@gmail.com",
     gender: "Male",
   },
   {
     id: 4,
-    firstName: "Kumara",
-    lastName: "Sangakarra",
+    firstName: "Ashish",
+    lastName: "sharma",
     contactType: "Business",
     phoneNumber: "987121578",
-    email: "Kumar@gmail.com",
+    email: "ashish@gmail.com",
     gender: "Male",
   },
 ];
@@ -71,12 +70,10 @@ function reducer(contactsList, action) {
 }
 
 function ContactsList() {
-  const [contactsList, dispatch] = useReducer(reducer, initialContacts);
+  const [contactsList, dispatch] = React.useReducer(reducer, initialContacts);
   const [createContact, setCreateContact] = React.useState(false);
   const [updateContact, setUpdateContact] = React.useState(false);
   const [selectedContact, setSelectedContact] = React.useState(0);
-
-  console.log(selectedContact);
 
   function handleCreateContact() {
     setCreateContact(false);
@@ -87,7 +84,6 @@ function ContactsList() {
   }
 
   function handleAddNewContact(newContact) {
-    console.log(newContact);
     dispatch({
       type: "create",
       newContact,
@@ -232,6 +228,3 @@ function ContactsList() {
 }
 
 export default ContactsList;
-
-// Please create a Contact List app in React with CRUD operations. Kindly use dummy data to drive the app instead of APIs. The app should only use functional components. It should manage business and personal contacts.
-// The app should also keep a running tally of the number of Male and Female Contacts and the number of Personal and Business Contacts.This information should be displayed in the UI
