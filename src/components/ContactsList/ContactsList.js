@@ -32,12 +32,12 @@ const initialContacts = [
   },
   {
     id: 4,
-    firstName: "Ashish",
+    firstName: "Amruta",
     lastName: "sharma",
     contactType: "Business",
     phoneNumber: "987121578",
     email: "ashish@gmail.com",
-    gender: "Male",
+    gender: "Female",
   },
 ];
 
