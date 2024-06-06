@@ -70,10 +70,15 @@ function reducer(contactsList, action) {
 }
 
 function ContactsList() {
-  const [contactsList, dispatch] = React.useReducer(reducer, initialContacts);
+  const [contactsList, dispatch] = React.useReducer(
+    reducer,
+    JSON.parse(window.localStorage.getItem("contactsList")) || initialContacts
+  );
   const [createContact, setCreateContact] = React.useState(false);
   const [updateContact, setUpdateContact] = React.useState(false);
   const [selectedContact, setSelectedContact] = React.useState(0);
+
+  window.localStorage.setItem("contactsList", JSON.stringify(contactsList));
 
   function handleCreateContact() {
     setCreateContact(false);
