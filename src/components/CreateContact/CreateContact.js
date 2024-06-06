@@ -4,6 +4,12 @@ import React from "react";
 function CreateContact({ type, contact, handleContact, handleNewContact }) {
   const [formData, setFormData] = React.useState(contact);
 
+  const firstNameRef = React.useRef();
+
+  React.useEffect(() => {
+    firstNameRef.current.focus();
+  }, []);
+
   function handleFormSubmit(e) {
     e.preventDefault();
     handleNewContact(formData);
@@ -19,6 +25,7 @@ function CreateContact({ type, contact, handleContact, handleNewContact }) {
             First Name
           </label>
           <input
+            ref={firstNameRef}
             type="text"
             id="firstName"
             className={styles.input}
