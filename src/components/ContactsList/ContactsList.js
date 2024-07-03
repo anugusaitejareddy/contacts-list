@@ -88,26 +88,26 @@ function ContactsList() {
     setUpdateContact(false);
   }
 
-  function handleAddNewContact(newContact) {
+  const handleAddNewContact = (newContact) => {
     dispatch({
       type: "create",
       newContact,
     });
-  }
+  };
 
-  function handleUpdateExistingContact(updateInfo) {
+  const handleUpdateExistingContact = (updateInfo) => {
     dispatch({
       type: "update",
       updateInfo,
     });
-  }
+  };
 
-  function handleDeleteContact(id) {
+  const handleDeleteContact = (id) => {
     dispatch({
       type: "delete",
       id,
     });
-  }
+  };
 
   return (
     <div>
