@@ -53,7 +53,7 @@ const createContactInitialData = {
 function reducer(contactsList, action) {
   if (action.type === "create") {
     const newContact = {
-      id: contactsList.length + 1,
+      id: crypto.randomUUID(),
       ...action.newContact,
     };
     return [...contactsList, newContact];
